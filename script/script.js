@@ -47,7 +47,13 @@ function convertTemperature() {
         result = "Invalid conversion";
     }
 
-    resultLabel.innerHTML = `Result: <span>${result.toFixed(1)}° ${toValue.charAt(0).toUpperCase()}<span>`;
+    if(toValue === "Celsius" || toValue === "Fahrenheit"){
+        resultLabel.innerHTML = `Result: <span>${result.toFixed(1)}° ${toValue.charAt(0).toUpperCase()}<span>`;
+    }else{
+        resultLabel.innerHTML = `Result: <span>${result.toFixed(1)} ${toValue.charAt(0).toUpperCase()}<span>`;
+    }
+
+    
 }
 
 submitBtn.addEventListener('click', convertTemperature);
